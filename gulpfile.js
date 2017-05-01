@@ -11,8 +11,8 @@ var browserSync = require('browser-sync').create();
 var Files = {
     html: "./index.html",
     css_dest: "./css",
-    scss_all: "./sass/**/*.scss",
-    scss_main: "./sass/style.scss"
+    scss_all: "./scss/**/*.scss",
+    scss_main: "./scss/style.scss"
 }
 
 gulp.task('sass', function() {
@@ -66,16 +66,16 @@ gulp.task('default', ['sass', 'minify-css', 'minify-js', 'htmlhint', 'watch'], f
     });
 
     gulp.watch(Files.scss_all, ['sass']);
-    gulp.watch(Files.html, browserSync.reload);
+    gulp.watch(Files.html, browserSync.stream());
 
 });
 
 
 
 // This handles watching and running tasks
-// gulp.task('watch', function() {
-//     gulp.watch('sass/**/*.scss', ['sass']);
-//     gulp.watch('css/style.css', ['minify-css']);
-//     gulp.watch('js/**/*.js', ['minify-js']);
-//     gulp.watch('*.html', ['htmlhint']);
-// });
+gulp.task('watch', function() {
+    gulp.watch('scss/**/*.scss', ['sass']);
+    gulp.watch('css/style.css', ['minify-css']);
+    gulp.watch('js/**/*.js', ['minify-js']);
+    gulp.watch('*.html', ['htmlhint']);
+});

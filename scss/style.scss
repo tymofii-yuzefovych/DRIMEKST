@@ -96,3 +96,66 @@ header {
         width: 100%;
     }
 }
+
+.oferts {
+    @include flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .box {
+        @include flex;
+        flex-wrap: wrap;
+        height: 200px;
+        width: 270px;
+        background-color: #e5e5e7;
+        margin: 60px 10px;
+        padding: 15px;
+        img {
+            height: 70px;
+            width: 70px;
+        }
+        h2 {
+            font-size: 36px;
+            margin-left: 15px;
+            span {
+                color: #fdc903;
+            }
+        }
+        p {
+            font-size: 14px;
+        }
+    }
+}
+
+.order {
+    background-color: #fdc903;
+    .phone {
+        @include flex;
+        padding: 30px;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 130px;
+        }
+        .call {
+            @include flex;
+            flex-direction: column;
+            color: #fff;
+            font-size: 36px;
+            margin: 0 50px;
+            a {
+                font-size: 36px;
+                color: #fff;
+                text-transform: uppercase;
+                margin-left: 55px;
+            }
+            img {
+                width: 40px;
+            }
+            .call-phone {
+                @include flex;
+                flex-direction: row;
+            }
+        }
+    }
+}
